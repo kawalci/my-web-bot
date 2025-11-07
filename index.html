@@ -106,7 +106,7 @@
                 reader.onload = async function(e) {
                     const imageDataURL = e.target.result;
                     try {
-                        const responseStream = await puter.ai.chat(finalPrompt, imageDataURL, { model: "gpt-4o", stream: true, temperature: 0.1 });
+                        const responseStream = await puter.ai.chat(finalPrompt, imageDataURL, { model: "gpt-4o-mini", stream: true, temperature: 0.1 });
                         resultArea.textContent = "";
                         for await (const part of responseStream) {
                             if (part?.text) {
@@ -126,4 +126,5 @@
         });
     </script>
 </body>
+
 </html>
